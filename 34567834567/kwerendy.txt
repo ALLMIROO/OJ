@@ -1,0 +1,2 @@
+SELECT imie, nazwisko FROM osoby WHERE dataUr > 2000;
+SELECT DISTINCT miasto FROM adresy ORDER BY miasto ASC;
