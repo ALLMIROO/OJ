@@ -1,1 +1,12 @@
-<aside>
+aside {
+background-color: steelblue;
+color: white;
+text-align: center;
+width: 25%;
+height: 510px;
+margin-top: 0;
+margin-bottom: 0;
+margin-left: 1%;
+margin-right: 1%;
+box-shadow: 4px 4px 5px dimgray;   
+}
