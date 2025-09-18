@@ -1,42 +1,48 @@
-body {
-display: flex;
-gap: 20px;
-padding: 20px;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column; /* układ w kolumnie */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
-
-
+main {
+    flex: 1; /* wypełnia całą przestrzeń, dzięki czemu footer spada na dół */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
 
 aside {
-flex: 1;    
-background-color: steelblue;
-color: white;
-text-align: center;
-width: 25%;
-height: 510px;
-margin-top: 0;
-margin-bottom: 0;
-margin-left: 1%;
-margin-right: 1%;
-box-shadow: 4px 4px 5px dimgray;   
+    flex: 1;
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+    width: 25%;
+    height: 510px;
+    margin: 0 1%;
+    box-shadow: 4px 4px 5px dimgray;
 }
 
 header {
-flex: 2;    
-background-color: steelblue;
-color: white;
-text-align: center;
-width: 73%;
-height: 80px;
-margin-left: auto;
-align-items: center;
-justify-content: center;
+    flex: 2;
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+    width: 73%;
+    height: 80px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
+    background-color: steelblue;
     color: white;
+    text-align: center;
     padding: 15px;
-    
 }
