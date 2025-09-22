@@ -27,6 +27,11 @@ aside {
     box-shadow: 4px 4px 5px dimgray;
 }
 
+button {
+    flex: 3;
+}
+
+
 header {
     flex: 2;
     background-color: steelblue;
@@ -45,5 +50,14 @@ footer {
     color: white;
     text-align: center;
     font-size: 1rem;
-    line-height: 0em;  /* wysokość = 2x wysokość czcionki */
+    line-height: 0em;  
 }
+
+table {
+    background-color: steelblue;
+    color: white;
+    width: 100%;
+    border: 1px dotted black;
+}
+
+
