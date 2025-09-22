@@ -1,0 +1,14 @@
+# Ignoruj pliki tymczasowe systemu
+.DS_Store
+Thumbs.db
+
+# Ignoruj foldery z zależnościami
+node_modules/
+venv/
+
+# Ignoruj pliki kompilacji
+dist/
+build/
+
+# Ignoruj pliki konfiguracyjne środowiska
+.env
