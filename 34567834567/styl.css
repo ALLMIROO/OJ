@@ -17,7 +17,7 @@ body{ margin:0; background: Linen; }
   grid-row: 1 / 4;                 /* rozciąga się na wysokość prawej kolumny */
   width: 100%;
   height: 510px;
-  margin: 0;                        /* marginesy zgodnie z arkuszem: 0 g/d */
+  margin: 0;                       /* marginesy: 0 góra/dół */
   background: SteelBlue;
   color: #fff;
   text-align: center;
@@ -29,7 +29,7 @@ body{ margin:0; background: Linen; }
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  border: 1px dotted Navy;         /* wymóg: obramowanie kropkowane 1px Navy */
+  border: 1px dotted Navy;         /* obramowanie kropkowane 1px Navy */
 }
 .sidebar th, .sidebar td{
   border: 1px dotted Navy;
@@ -72,10 +72,10 @@ body{ margin:0; background: Linen; }
 }
 .tabs button:hover{ background: Navy; }
 
-/* trzy bloki z kontrolkami: LightBlue, margin-right 80px, padding 10px; startowo widoczny 1. */
+/* trzy bloki z kontrolkami: LightBlue, margin-right 80px, padding 10px */
 .zakladka{
   background: LightBlue;
-  margin: 20px 80px 0 auto; /* right 80px zgodnie z arkuszem */
+  margin: 20px 80px 0 auto; /* prawa 80px */
   padding: 10px;
   text-align: left;
 }
@@ -91,16 +91,17 @@ body{ margin:0; background: Linen; }
 #pasek{
   width: 4%;
   height: 30px;
+  background: Navy;   /* ➕ brakowało koloru wypełnienia */
+  transition: width .3s ease; /* ➕ ładne płynne przesuwanie */
 }
 
 /* stopka – pełna szerokość, pod gridem */
 .footer{
-    grid-column: 1 / -1;  /* ignorowane poza gridem, ale nie szkodzi */
-    width: 100%;
-    background: SteelBlue;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    clear: both;          /* żeby nie łapała kolumn */
-  }
-  
+  grid-column: 1 / -1;
+  width: 100%;
+  background: SteelBlue;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  clear: both;
+}
