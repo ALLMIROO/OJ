@@ -83,16 +83,16 @@ body{ margin:0; background: Linen; }
 .confirm{ margin-top: 10px; }
 
 /* pasek postępu: LightGrey, szer. 73%, mb 10px; wewnętrzny: Navy, 4% x 30px */
-#postep{
+#postep {
   width: 100%;
-  background: rgb(197, 111, 111);
+  background: LightGrey;  /* kolor pustego paska */
   margin: 0 0 10px 0;
 }
-#pasek{
+#pasek {
   width: 4%;
   height: 30px;
-  background: Navy;   /* ➕ brakowało koloru wypełnienia */
-  transition: width .3s ease; /* ➕ ładne płynne przesuwanie */
+  background: Navy;        /* <--- kolor paska */
+  transition: width .3s ease; /* <--- ładne płynne zwiększanie */
 }
 
 /* stopka – pełna szerokość, pod gridem */
@@ -105,3 +105,5 @@ body{ margin:0; background: Linen; }
   padding: 10px 0;
   clear: both;
 }
+
+

@@ -43,26 +43,26 @@
 
         <section id="blok1" class="zakladka">
           <p>Imię</p>
-          <input type="text" placeholder="Wpisz dane..." onblur="zwiekszPostep()" />
+          <input type="text" placeholder="Wpisz dane..." onblur="zwiekszPostep(this)" />
           <p>Nazwisko</p>
-          <input type="text" onblur="zwiekszPostep()" />
+          <input type="text" onblur="zwiekszPostep(this)" />
           <p>Data urodzenia</p>
-          <input type="date" onblur="zwiekszPostep()" />
+          <input type="date" onblur="zwiekszPostep(this)" />
         </section>
 
         <section id="blok2" class="zakladka" hidden>
           <p>Ulica</p>
-          <input type="text" onblur="zwiekszPostep()" />
+          <input type="text" onblur="zwiekszPostep(this)" />
           <p>Numer</p>
-          <input type="number" onblur="zwiekszPostep()" />
+          <input type="number" onblur="zwiekszPostep(this)" />
           <p>Miasto</p>
-          <input type="text" onblur="zwiekszPostep()" />
+          <input type="text" onblur="zwiekszPostep(this)" />
         </section>
 
         <section id="blok3" class="zakladka" hidden>
           <p>Numer komórkowy</p>
-          <input type="tel" onblur="zwiekszPostep()" />
-          <p><label><input type="checkbox" onblur="zwiekszPostep()" /> Akceptuję RODO</label></p>
+          <input type="tel" onblur="zwiekszPostep(this)" />
+          <p><label><input type="checkbox" onblur="zwiekszPostep(this)" /> Akceptuję RODO</label></p>
           <button class="confirm" onclick="zatwierdz()">Zatwierdź dane</button>
         </section>
       </section>

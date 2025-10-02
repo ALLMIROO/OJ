@@ -1,35 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- zakładki ---
+
   const buttons = document.querySelectorAll('.tabs button');
   const bloki = document.querySelectorAll('.zakladka');
 
   function pokaz(index) {
     bloki.forEach((b, i) => b.hidden = i !== index);
-    // (opcjonalnie) wizualna aktywność przycisków
     buttons.forEach((btn, i) => btn.classList.toggle('active', i === index));
   }
 
   buttons.forEach((btn, i) => btn.addEventListener('click', () => pokaz(i)));
-  pokaz(0); // start: Klient
+  pokaz(0); 
 
-  // --- pasek postępu ---
   const pasek = document.getElementById('pasek');
-  let procent = 4;               // start jak w CSS
+  let procent = 4;
   const KROK = 12;
 
   const ustaw = p => {
-    procent = Math.min(100, Math.max(0, p)); // clamp 0..100
+    procent = Math.min(100, Math.max(0, p));
     pasek.style.width = procent + '%';
   };
   ustaw(procent);
 
-  // --- funkcja wywoływana z onblur w HTML ---
-  // Każda utrata focusa = +12% (upraszczamy zgodnie z założeniem)
-  window.zwiekszPostep = function () {
-    ustaw(procent + KROK);
+  const inputs = document.querySelectorAll('.main input');
+  const uzupelnione = new WeakSet();
+
+  window.zwiekszPostep = function (el) {
+    if (!el) return;
+
+    let wpisane = false;
+    if (el.type === 'checkbox') {
+      wpisane = el.checked;
+    } else {
+      wpisane = el.value.trim() !== '';
+    }
+
+    if (wpisane && !uzupelnione.has(el)) {
+      uzupelnione.add(el);
+      ustaw(procent + KROK);
+    }
   };
 
-  // --- funkcja „Zatwierdź dane” wywoływana z onclick w HTML ---
   window.zatwierdz = function () {
     const imie      = document.querySelectorAll('#blok1 input[type="text"]')[0]?.value || '';
     const nazwisko  = document.querySelectorAll('#blok1 input[type="text"]')[1]?.value || '';
