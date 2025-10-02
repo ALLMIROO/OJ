@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Sklep - rejestracja</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styl.css">
+  <meta charset="UTF-8" />
+  <title>Sklep - rejestracja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styl.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <main>
-        <aside>
-            <img src="obraz.png" alt="promocja">
-            <h2>Sprawdź promocje</h2>
-            <table>
-                <tr>
-                    <th style="font-weight: 700;">co?</th>
-                    <th style="font-weight: 700;">ile taniej?</th>
-                </tr>
-                <tr>
-                    <td>ubrania</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>buty</td>
-                    <td>25%</td>
-                </tr>
-            </table>
-        </aside>
-        <header>
-            <h1>Zarejestruj się w sklepie</h1>
-            <button>ggg</button>
-        </header>
-    </main>
+  <!-- GŁÓWNY, JEDYNY MAIN -->
+  <main class="page">
+    <!-- LEWA KOLUMNA -->
+    <aside class="sidebar">
+      <img src="obraz.png" alt="promocje" />
+      <h2>Sprawdź promocje</h2>
+      <table>
+        <thead>
+          <tr><th>co?</th><th>ile taniej?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ubrania</td><td>15%</td></tr>
+          <tr><td>buty</td><td>25%</td></tr>
+        </tbody>
+      </table>
+    </aside>
 
-    <footer>
-        <p>Rejestrację do sklepu wykonał: 0000000000</p>
-    </footer>
+    <!-- PRAWA KOLUMNA (obok sidebara) -->
+    <section class="right">
+
+      <header class="banner">
+        <h1>Zarejestruj się w sklepie</h1>
+      </header>
+
+      <!-- to NIE jest <main>; tylko jedna sekcja główna wewnątrz kolumny -->
+      <section class="main">
+        <nav class="tabs" aria-label="Zakładki formularza">
+          <button>Klient</button>
+          <button>Adres</button>
+          <button>Kontakt</button>
+        </nav>
+
+        <section id="blok1" class="zakladka">
+          <p>Imię</p>
+          <input type="text" placeholder="Wpisz dane..." onblur="zwiekszPostep()" />
+          <p>Nazwisko</p>
+          <input type="text" onblur="zwiekszPostep()" />
+          <p>Data urodzenia</p>
+          <input type="date" onblur="zwiekszPostep()" />
+        </section>
+
+        <section id="blok2" class="zakladka" hidden>
+          <p>Ulica</p>
+          <input type="text" onblur="zwiekszPostep()" />
+          <p>Numer</p>
+          <input type="number" onblur="zwiekszPostep()" />
+          <p>Miasto</p>
+          <input type="text" onblur="zwiekszPostep()" />
+        </section>
+
+        <section id="blok3" class="zakladka" hidden>
+          <p>Numer komórkowy</p>
+          <input type="tel" onblur="zwiekszPostep()" />
+          <p><label><input type="checkbox" onblur="zwiekszPostep()" /> Akceptuję RODO</label></p>
+          <button class="confirm" onclick="zatwierdz()">Zatwierdź dane</button>
+        </section>
+      </section>
+
+      <!-- BLOK PASKA POSTĘPU (sekcja + „pusty blok” też sekcja) -->
+      <section id="postep">
+        <section id="pasek"></section>
+      </section>
+
+    </section> <!-- /right -->
+  </main> <!-- /page -->
+
+  <!-- STOPKA NA DOLE STRONY -->
+  <footer class="footer">
+    <h4>Rejestrację do sklepu wykonał: 0000000000</h4>
+  </footer>
 
 </body>
 </html>
