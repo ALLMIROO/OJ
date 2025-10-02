@@ -14,22 +14,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- pasek postępu ---
   const pasek = document.getElementById('pasek');
-  let procent = 4;               // start jak w CSS
+  let procent = 4;
   const KROK = 12;
 
   const ustaw = p => {
-    procent = Math.min(100, Math.max(0, p)); // clamp 0..100
+    procent = Math.min(100, Math.max(0, p));
     pasek.style.width = procent + '%';
   };
   ustaw(procent);
 
-  // --- funkcja wywoływana z onblur w HTML ---
-  // Każda utrata focusa = +12% (upraszczamy zgodnie z założeniem)
-  window.zwiekszPostep = function () {
-    ustaw(procent + KROK);
+  // --- logika sprawdzania wypełnienia ---
+  const inputs = document.querySelectorAll('.main input');
+  const uzupelnione = new WeakSet(); // zbiera już zaliczone pola
+
+  window.zwiekszPostep = function (el) {
+    if (!el) return;
+
+    // sprawdzenie wartości
+    let wpisane = false;
+    if (el.type === 'checkbox') {
+      wpisane = el.checked;
+    } else {
+      wpisane = el.value.trim() !== '';
+    }
+
+    // jeśli coś wpisano i to pole nie było jeszcze zaliczone → dodaj punkt
+    if (wpisane && !uzupelnione.has(el)) {
+      uzupelnione.add(el);
+      ustaw(procent + KROK);
+    }
   };
 
-  // --- funkcja „Zatwierdź dane” wywoływana z onclick w HTML ---
+  // --- zatwierdzenie ---
   window.zatwierdz = function () {
     const imie      = document.querySelectorAll('#blok1 input[type="text"]')[0]?.value || '';
     const nazwisko  = document.querySelectorAll('#blok1 input[type="text"]')[1]?.value || '';
