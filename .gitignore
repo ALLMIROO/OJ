@@ -12,3 +12,4 @@ build/
 
 # Ignoruj pliki konfiguracyjne środowiska
 .env
+settings.json
