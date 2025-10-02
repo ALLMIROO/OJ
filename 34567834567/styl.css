@@ -60,7 +60,7 @@ body{ margin:0; background: Linen; }
 /* przyciski: SteelBlue, biały, 20% szer., padding 15px, mt 30px, 130%, bez obramowania */
 .tabs{
   display: flex; gap: 10px;
-  justify-content: center;
+  justify-content: left;
 }
 .tabs button{
   background: SteelBlue; color: #fff;
@@ -85,7 +85,7 @@ body{ margin:0; background: Linen; }
 /* pasek postępu: LightGrey, szer. 73%, mb 10px; wewnętrzny: Navy, 4% x 30px */
 #postep{
   width: 100%;
-  background: LightGrey;
+  background: rgb(197, 111, 111);
   margin: 0 0 10px 0;
 }
 #pasek{
